@@ -19,6 +19,26 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
+      ## Fields Infos User
+      t.string  :nome
+      t.string  :email
+      t.string  :sexo
+      t.date    :data_nasc
+      t.string  :estado_civil
+      t.integer :cep
+      t.string  :rua
+      t.string  :numero
+      t.string  :bairro
+      t.string  :cidade
+      t.string  :uf
+      t.string  :complemento
+      t.integer :telefone
+      t.integer :celular
+      t.integer :identidade_rg
+      t.string  :orgao_rg
+      t.integer :cpf
+      t.string  :grupo
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
@@ -42,5 +62,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
     # add_index :users, :authentication_token, :unique => true
+  end
+  def down
+    drop_table :users
   end
 end
