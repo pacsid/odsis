@@ -1,21 +1,21 @@
 <%= link_to "Inicio", root_path, :class => 'brand' %>
 <ul class="nav">
   <% if user_signed_in? %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastrar <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+      <li><a href="#">Paciente</a></li>
+      <li><a href="#">Procedimento</a></li>
+      <li><a href="#">Convenio</a></li>
+      <li class="divider"></li>
+      <li class="nav-header">Cofinguração</li>
+      <li><a href="#">Dados da Clinica</a></li>
+      </ul>
     </li>
+    <li><%= link_to('Sair', destroy_user_session_path, :method=>'delete') %></li>
+    <li><%= link_to('Editar Dados', edit_user_registration_path) %><li>
   <% else %>
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to('Edit account', edit_user_registration_path) %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to('Cadastrar', new_user_registration_path)  %>
-    </li>
+    <li><%= link_to('Login', new_user_session_path)  %></li>
+    <li><%= link_to('Cadastrar!', new_user_registration_path)  %></li>
   <% end %>
 </ul>

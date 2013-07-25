@@ -1,6 +1,7 @@
 Odsis::Application.routes.draw do
   devise_for :users
-  root :to => redirect("/users/sign_in")
+  get "static/index"
+  root :to => "static#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
