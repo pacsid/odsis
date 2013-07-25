@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @paciente.user_id %>
+</p>
+
+<p>
+  <b>Ultima consulta:</b>
+  <%= @paciente.ultima_consulta %>
+</p>
+
+
+<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
+<%= link_to 'Back', pacientes_path %>

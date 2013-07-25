@@ -7,7 +7,11 @@ gem 'simple_form'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
 
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

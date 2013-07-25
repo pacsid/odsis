@@ -1,5 +1,9 @@
 Odsis::Application.routes.draw do
-  devise_for :users
+  get "users/create"
+  post "users/create"
+  resources :pacientes
+  resources :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   get "static/index"
   root :to => "static#index"
   # The priority is based upon order of creation:
