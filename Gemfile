@@ -17,6 +17,7 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'less-rails'
   gem 'therubyracer'
+  gem 'rails_bootstrap_navbar'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
