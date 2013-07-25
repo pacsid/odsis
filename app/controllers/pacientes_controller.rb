@@ -41,8 +41,8 @@ class PacientesController < ApplicationController
   # POST /pacientes.json
   def create
     @user = User.create!(params[:paciente][:user]) 
-    date = Date.new params[:paciente]["ultima_consulta(1i)"].to_i, params[:paciente]["ultima_consulta(2i)"].to_i, params[:paciente]["ultima_consulta(3i)"].to_i
-    @paciente = @user.build_paciente(params[:paciente], :ultima_consulta => date)
+    #date = Date.new params[:paciente]["ultima_consulta(1i)"].to_i, params[:paciente]["ultima_consulta(2i)"].to_i, params[:paciente]["ultima_consulta(3i)"].to_i
+    @paciente = @user.build_paciente
     respond_to do |format|
       if @paciente.save
         format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }

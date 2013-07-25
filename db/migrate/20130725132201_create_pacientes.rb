@@ -6,5 +6,8 @@ class CreatePacientes < ActiveRecord::Migration
 
       t.timestamps
     end
+  def down
+  drop_table :pacientes
+  end
   end
 end

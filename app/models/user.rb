@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :paciente
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-    attr_accessible :email, :password, :remember_me, :password_confirmation, :paciente_attributes, :nome
+    attr_accessible :email, :password, :remember_me, :password_confirmation, :paciente_attributes, :nome,
+    :grupo, :cpf, :identidade_rg, :sexo, :data_nasc, :estado_civil, :cep, :rua, :bairro, :cidade, :uf, :complemento, :numero, :telefone, :celular
 end

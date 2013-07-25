@@ -1,8 +1,6 @@
 Odsis::Application.routes.draw do
-  get "users/create"
   post "users/create"
   resources :pacientes
-  resources :users
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   get "static/index"
   root :to => "static#index"
