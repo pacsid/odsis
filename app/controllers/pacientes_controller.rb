@@ -1,4 +1,5 @@
 class PacientesController < ApplicationController
+  helper_method :calcular_idade
   # GET /pacientes
   # GET /pacientes.json
   def index
@@ -35,6 +36,7 @@ class PacientesController < ApplicationController
   # GET /pacientes/1/edit
   def edit
     @paciente = Paciente.find(params[:id])
+    @user = @paciente.user
   end
 
   # POST /pacientes

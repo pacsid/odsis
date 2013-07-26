@@ -7,8 +7,10 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th>Nome</th>
-      <th><%= model_class.human_attribute_name(:ultima_consulta) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Telefone </th>
+      <th>Data Nascimento </th>
+      <th>Idade </th>
+      <th>Data Cadastro </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,8 +19,10 @@
       <tr>
         <td><%= link_to paciente.id, paciente_path(paciente) %></td>
         <td><%= paciente.user.nome %></td>
-        <td><%= paciente.ultima_consulta %></td>
-        <td><%=l paciente.created_at %></td>
+        <td><%= paciente.user.try(:telefone) %></td>
+        <td><%= paciente.user.try(:data_nasc).try(:strftime, "%m/%d/%Y") %></td>
+        <td><%= paciente.calcular_idade(paciente.user.data_nasc) unless paciente.user.data_nasc.nil?  %></td>
+        <td><%= paciente.created_at.strftime("%d/%m/%Y") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_paciente_path(paciente), :class => 'btn btn-mini' %>
